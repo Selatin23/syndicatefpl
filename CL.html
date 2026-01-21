@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champions League Table</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+        :root {
+            --ucl-dark: #00041c;
+            --ucl-blue: #001a4d;
+            --ucl-gold: #d4af37;
+            --ucl-silver: #a8a8a8;
+            --relegation-red: #e63946;
+        }
+
+        body {
+            background-color: var(--ucl-dark);
+            background-image: radial-gradient(circle at 50% 0%, #001a4d 0%, #00041c 100%);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .table-container {
+            width: 100%;
+            max-width: 850px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #001a4d 0%, #003399 100%);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--ucl-gold);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--ucl-gold);
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #94a3b8;
+            text-transform: uppercase;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            padding: 16px;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.06);
+            transition: 0.2s ease;
+        }
+
+        .rank {
+            font-weight: 800;
+            width: 40px;
+            color: var(--ucl-gold);
+        }
+
+        /* Цветовые схемы для лиг */
+        .badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 800;
+            display: inline-block;
+            min-width: 25px;
+            text-align: center;
+        }
+        .bg-pl { background: #3d195b; color: #00ff87; } /* Стиль Premier League */
+        .bg-a { background: #0044cc; color: #fff; }
+        .bg-b { background: #64748b; color: #fff; }
+        .bg-c { background: #92400e; color: #fff; }
+        .bg-d { background: #334155; color: #cbd5e1; }
+
+        .team-name {
+            font-weight: 600;
+            color: #f8fafc;
+        }
+
+        .pts {
+            text-align: right;
+            font-weight: 800;
+            color: #fff;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Зона вылета */
+        .relegation-row {
+            background-color: rgba(230, 57, 70, 0.04);
+        }
+        .relegation-row td {
+            color: #94a3b8;
+        }
+        .relegation-row .rank {
+            color: #e63946;
+        }
+
+        /* Линия разграничения */
+        .cut-off-line td {
+            background: linear-gradient(90deg, transparent, var(--relegation-red), transparent);
+            padding: 3px 0;
+            text-align: center;
+            font-size: 10px;
+            font-weight: 900;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            border: none;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 { font-size: 18px; letter-spacing: 2px; }
+            td, th { padding: 12px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <div class="header">
+        <h1>Champions League Phase</h1>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>League</th>
+                <th>Team</th>
+                <th style="text-align: right;">Pts</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td class="rank">1</td><td><span class="badge bg-pl">PL</span></td><td class="team-name">First Winter</td><td class="pts">0</td></tr>
+            <tr><td class="rank">2</td><td><span class="badge bg-pl">PL</span></td><td class="team-name">Maximus</td><td class="pts">0</td></tr>
+            <tr><td class="rank">3</td><td><span class="badge bg-pl">PL</span></td><td class="team-name">Xhaka Boom</td><td class="pts">0</td></tr>
+            <tr><td class="rank">4</td><td><span class="badge bg-pl">PL</span></td><td class="team-name">KinG_H2H</td><td class="pts">0</td></tr>
+            <tr><td class="rank">5</td><td><span class="badge bg-pl">PL</span></td><td class="team-name">Leon</td><td class="pts">0</td></tr>
+            <tr><td class="rank">6</td><td><span class="badge bg-pl">PL</span></td><td class="team-name">Cypher</td><td class="pts">0</td></tr>
+            <tr><td class="rank">7</td><td><span class="badge bg-pl">PL</span></td><td class="team-name">SAF</td><td class="pts">0</td></tr>
+            <tr><td class="rank">8</td><td><span class="badge bg-pl">PL</span></td><td class="team-name">Florentino Perez</td><td class="pts">0</td></tr>
+            <tr><td class="rank">9</td><td><span class="badge bg-pl">PL</span></td><td class="team-name">Yertis10</td><td class="pts">0</td></tr>
+            <tr><td class="rank">10</td><td><span class="badge bg-pl">PL</span></td><td class="team-name">Alan Pardew</td><td class="pts">0</td></tr>
+            
+            <tr><td class="rank">11</td><td><span class="badge bg-a">A1</span></td><td class="team-name">Steppe Nomads</td><td class="pts">0</td></tr>
+            <tr><td class="rank">12</td><td><span class="badge bg-a">A1</span></td><td class="team-name">Winning XI</td><td class="pts">0</td></tr>
+            <tr><td class="rank">13</td><td><span class="badge bg-a">A1</span></td><td class="team-name">North London Nomads</td><td class="pts">0</td></tr>
+            <tr><td class="rank">14</td><td><span class="badge bg-a">A1</span></td><td class="team-name">Azun mazun</td><td class="pts">0</td></tr>
+            <tr><td class="rank">15</td><td><span class="badge bg-a">A1</span></td><td class="team-name">Altyn Orda</td><td class="pts">0</td></tr>
+            <tr><td class="rank">16</td><td><span class="badge bg-a">A1</span></td><td class="team-name">Zheleznodorozhnik</td><td class="pts">0</td></tr>
+            <tr><td class="rank">17</td><td><span class="badge bg-a">A1</span></td><td class="team-name">Landskrona</td><td class="pts">0</td></tr>
+            <tr><td class="rank">18</td><td><span class="badge bg-a">A1</span></td><td class="team-name">-KMRM-</td><td class="pts">0</td></tr>
+            <tr><td class="rank">19</td><td><span class="badge bg-a">A1</span></td><td class="team-name">Bruno Penaldes</td><td class="pts">0</td></tr>
+            <tr><td class="rank">20</td><td><span class="badge bg-a">A1</span></td><td class="team-name">Madridist</td><td class="pts">0</td></tr>
+
+            <tr><td class="rank">21</td><td><span class="badge bg-a">A2</span></td><td class="team-name">KDB_X</td><td class="pts">0</td></tr>
+            <tr><td class="rank">22</td><td><span class="badge bg-a">A2</span></td><td class="team-name">Finskaya Vodka</td><td class="pts">0</td></tr>
+            <tr><td class="rank">23</td><td><span class="badge bg-a">A2</span></td><td class="team-name">mancunian red</td><td class="pts">0</td></tr>
+            <tr><td class="rank">24</td><td><span class="badge bg-a">A2</span></td><td class="team-name">Lancer Team</td><td class="pts">0</td></tr>
+            <tr><td class="rank">25</td><td><span class="badge bg-a">A2</span></td><td class="team-name">Almaty vibe</td><td class="pts">0</td></tr>
+            <tr><td class="rank">26</td><td><span class="badge bg-a">A2</span></td><td class="team-name">FC RICHMOND</td><td class="pts">0</td></tr>
+            <tr><td class="rank">27</td><td><span class="badge bg-a">A2</span></td><td class="team-name">Shapalaq</td><td class="pts">0</td></tr>
+            <tr><td class="rank">28</td><td><span class="badge bg-a">A2</span></td><td class="team-name">FF</td><td class="pts">0</td></tr>
+            <tr><td class="rank">29</td><td><span class="badge bg-a">A2</span></td><td class="team-name">Manc23</td><td class="pts">0</td></tr>
+            <tr><td class="rank">30</td><td><span class="badge bg-a">A2</span></td><td class="team-name">XI</td><td class="pts">0</td></tr>
+
+            <tr><td class="rank">31</td><td><span class="badge bg-b">B1</span></td><td class="team-name">Nureke Bakevich</td><td class="pts">0</td></tr>
+            <tr><td class="rank">32</td><td><span class="badge bg-b">B1</span></td><td class="team-name">fpltools.team</td><td class="pts">0</td></tr>
+            <tr><td class="rank">33</td><td><span class="badge bg-b">B1</span></td><td class="team-name">wirtz</td><td class="pts">0</td></tr>
+            <tr><td class="rank">34</td><td><span class="badge bg-b">B1</span></td><td class="team-name">Semey team</td><td class="pts">0</td></tr>
+            <tr><td class="rank">35</td><td><span class="badge bg-b">B1</span></td><td class="team-name">Why Ayew Running</td><td class="pts">0</td></tr>
+            <tr><td class="rank">36</td><td><span class="badge bg-b">B1</span></td><td class="team-name">SK_team</td><td class="pts">0</td></tr>
+            <tr><td class="rank">37</td><td><span class="badge bg-b">B1</span></td><td class="team-name">on my wirtz behavior</td><td class="pts">0</td></tr>
+            <tr><td class="rank">38</td><td><span class="badge bg-b">B1</span></td><td class="team-name">Grandapple</td><td class="pts">0</td></tr>
+            <tr><td class="rank">39</td><td><span class="badge bg-b">B1</span></td><td class="team-name">Laudisco</td><td class="pts">0</td></tr>
+            <tr><td class="rank">40</td><td><span class="badge bg-b">B1</span></td><td class="team-name">PayingTributeToКана</td><td class="pts">0</td></tr>
+
+            <tr><td class="rank">41</td><td><span class="badge bg-b">B2</span></td><td class="team-name">Hand Öf Berta</td><td class="pts">0</td></tr>
+            <tr><td class="rank">42</td><td><span class="badge bg-b">B2</span></td><td class="team-name">Megasport</td><td class="pts">0</td></tr>
+            <tr><td class="rank">43</td><td><span class="badge bg-b">B2</span></td><td class="team-name">Sir David</td><td class="pts">0</td></tr>
+            <tr><td class="rank">44</td><td><span class="badge bg-b">B2</span></td><td class="team-name">pepteam</td><td class="pts">0</td></tr>
+            <tr><td class="rank">45</td><td><span class="badge bg-b">B2</span></td><td class="team-name">The Red Royals</td><td class="pts">0</td></tr>
+            <tr><td class="rank">46</td><td><span class="badge bg-b">B2</span></td><td class="team-name">LFC Astana</td><td class="pts">0</td></tr>
+            <tr><td class="rank">47</td><td><span class="badge bg-b">B2</span></td><td class="team-name">FC Lucky Badgers</td><td class="pts">0</td></tr>
+            <tr><td class="rank">48</td><td><span class="badge bg-b">B2</span></td><td class="team-name">iTot</td><td class="pts">0</td></tr>
+            <tr><td class="rank">49</td><td><span class="badge bg-b">B2</span></td><td class="team-name">Wengerball</td><td class="pts">0</td></tr>
+            <tr><td class="rank">50</td><td><span class="badge bg-b">B2</span></td><td class="team-name">asik91</td><td class="pts">0</td></tr>
+
+            <tr class="cut-off-line">
+                <td colspan="4">Elimination Zone</td>
+            </tr>
+
+            <tr class="relegation-row"><td class="rank">51</td><td><span class="badge bg-b">B3</span></td><td class="team-name">Mistika</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">52</td><td><span class="badge bg-b">B3</span></td><td class="team-name">RED DEVIL</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">53</td><td><span class="badge bg-b">B3</span></td><td class="team-name">Kyrgyzstan_alga</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">54</td><td><span class="badge bg-b">B3</span></td><td class="team-name">Mederito</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">55</td><td><span class="badge bg-b">B3</span></td><td class="team-name">Karaganda</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">56</td><td><span class="badge bg-b">B3</span></td><td class="team-name">JBFC</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">57</td><td><span class="badge bg-b">B3</span></td><td class="team-name">Sweet Gabby Sauce</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">58</td><td><span class="badge bg-b">B3</span></td><td class="team-name">Anzor_Nadzhariyan</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">59</td><td><span class="badge bg-b">B3</span></td><td class="team-name">kanat</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">60</td><td><span class="badge bg-b">B3</span></td><td class="team-name">Abzal fc</td><td class="pts">0</td></tr>
+
+            <tr class="relegation-row"><td class="rank">61</td><td><span class="badge bg-c">C</span></td><td class="team-name">FORZA MILAN !!!</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">62</td><td><span class="badge bg-c">C</span></td><td class="team-name">ARAKHIS</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">63</td><td><span class="badge bg-c">C</span></td><td class="team-name">666</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">64</td><td><span class="badge bg-c">C</span></td><td class="team-name">ᴘʀɪᴅᴇ ᴏғ ʟᴏɴᴅᴏɴ</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">65</td><td><span class="badge bg-c">C</span></td><td class="team-name">Carrickology</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">66</td><td><span class="badge bg-c">C</span></td><td class="team-name">Yermek</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">67</td><td><span class="badge bg-c">C</span></td><td class="team-name">Umberto Baggio FC</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">68</td><td><span class="badge bg-c">C</span></td><td class="team-name">Barcelona</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">69</td><td><span class="badge bg-c">C</span></td><td class="team-name">Almasinho</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">70</td><td><span class="badge bg-c">C</span></td><td class="team-name">TalantPen</td><td class="pts">0</td></tr>
+
+            <tr class="relegation-row"><td class="rank">71</td><td><span class="badge bg-d">D</span></td><td class="team-name">APL</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">72</td><td><span class="badge bg-d">D</span></td><td class="team-name">northgate</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">73</td><td><span class="badge bg-d">D</span></td><td class="team-name">rk_barca_2</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">74</td><td><span class="badge bg-d">D</span></td><td class="team-name">Rus&Co</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">75</td><td><span class="badge bg-d">D</span></td><td class="team-name">FPL Grinder</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">76</td><td><span class="badge bg-d">D</span></td><td class="team-name">Shohn</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">77</td><td><span class="badge bg-d">D</span></td><td class="team-name">Baga83</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">78</td><td><span class="badge bg-d">D</span></td><td class="team-name">Don'tPushTheHorses</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">79</td><td><span class="badge bg-d">D</span></td><td class="team-name">Hero's Journey</td><td class="pts">0</td></tr>
+            <tr class="relegation-row"><td class="rank">80</td><td><span class="badge bg-d">D</span></td><td class="team-name">VSA</td><td class="pts">0</td></tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
